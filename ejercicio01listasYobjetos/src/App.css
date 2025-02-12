@@ -1,26 +1,117 @@
-.contenedor_inputs{
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
   display: flex;
- flex-direction: row;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
+.contenedor_header {
+  background-color: #007bff;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  width: 100%;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
 
-/* Ejercicio 1:
-// Desarrolla una web para el control de tareas pendientes. De las tareas queremos
-// almacenar el título, la descripción, si esta completada y la fecha límite. Los objetos los
-// crearemos a través de una clase Tarea.
-// La web Tendrá 3 inputs y un botón. Cuando se pulse el botón comprobaremos si los
-// campos están completados, si hay algún campo vacío se le notificara al usuario con un
-// alert y no se agregará la tarea a la lista de tareas pendiente. Si la fecha límite ya ha
-// pasado (es anterior a la fecha actual) se le notificara con un alert que no puede usar una
-// fecha anterior a la actual y no se creara la tarea. Si ha introducido toda la información y
-// esta correcta se añadirá la tarea a un array donde se almacenarán todas las tareas.
-// Tendremos que mostrar 2 lista, una con las tareas por completar y otra con las tareas
-// completadas.
-// En la lista de las tareas por completar, por cada tarea mostraremos el título, la
-// descripción, un mensaje diciéndole al usuario cuantos días quedan para completar la
-// tarea, un checkbox para completar la tarea y un icono para eliminarla. Si se ha pasado la
-// fecha límite para realizar la tarea, donde se muestran los días restantes mostrar un
-// mensaje que ponga “te has pasado X días” y que este mensaje este en rojo.
-// En la lista de tareas completadas, por cada tarea, se mostrará el título, la descripción y
-// un icono para eliminarla. */
+h1 {
+  margin: 0;
+}
+
+.contenedor_inputs {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.contenedor_inputs input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.contenedor_listas {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.lista_tareas {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  min-width: 300px;
+  max-width: 400px;
+}
+
+.tarea {
+  display: flex;
+  flex-direction: column;
+  background: #f9f9f9;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  border-left: 5px solid #007bff;
+}
+
+.tarea .titulo {
+  font-weight: bold;
+  color: #333;
+}
+
+.tarea .descripcion {
+  color: #666;
+  margin: 5px 0;
+}
+
+.tarea .fecha {
+  font-size: 0.9em;
+  color: #888;
+}
+
+.tarea .acciones {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tarea .acciones button {
+  background-color: red;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+
+.tarea .acciones button:hover {
+  background-color: darkred;
+}
+
+.tarea .fecha.pasada {
+  color: red;
+  font-weight: bold;
+}
